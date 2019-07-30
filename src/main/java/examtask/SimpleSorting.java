@@ -1,9 +1,6 @@
 package main.java.examtask;
 
-import java.util.Arrays;
-
 public class SimpleSorting {
-
 
     public int[] sortArray(int[] array, int start, int end) {
         if (start < end) {
