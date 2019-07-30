@@ -6,7 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         SimpleSorting simpleSorting = new SimpleSorting();
-        int[] someArray = {5, 2, 4, 6, 1, 3, 2, 6};
+        int[] someArray = {1, 5, 6, 7, 4, 2, 5, 8, 9, 3, 4, 7, 5};
+        System.out.println(Arrays.toString(someArray));
         System.out.println(Arrays.toString(simpleSorting.sortArray(someArray, 1, someArray.length)));
     }
 }

@@ -1,38 +1,26 @@
 package main.java.examtask;
 
+import java.util.Arrays;
+
 public class SimpleSorting {
+
 
     public int[] sortArray(int[] array, int start, int end) {
         if (start < end) {
             int halfOfArray = (int) Math.floor((double) (start + end) / 2);
-            sortPartOfArray(array, start, halfOfArray);
-            sortPartOfArray(array, halfOfArray + 1, end);
+            sortArray(array, start, halfOfArray);
+            sortArray(array, halfOfArray + 1, end);
             mergeSortedArrayParts(array, start, halfOfArray, end);
-        } else if (start == end) {
-            return array;
-        } else {
-            throw new IllegalArgumentException("Illegal input, this array can't be sorted");
         }
         return array;
-    }
-
-    private void sortPartOfArray(int[] array, int start, int end) {
-        for (int i = start - 1; i < end - 1; i++) {
-            for (int j = start - 1; j < end - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    array[j] = array[j] + array[j + 1];
-                    array[j + 1] = array[j] - array[j + 1];
-                    array[j] = array[j] - array[j + 1];
-                }
-            }
-        }
     }
 
     private void mergeSortedArrayParts(int[] array, int start, int halfOfArray, int end) {
         int start0 = start - 1;
         int halfOfArray0 = halfOfArray;
-        int[] mergedArray = new int[end - start0];
-        for (int i = start0; i < mergedArray.length - 1; i++) {
+        int[] mergedArray = new int[array.length];
+        swapArray(array, mergedArray, 1, array.length);
+        for (int i = start0; i < end - 1; i++) {
             if (start0 != halfOfArray && halfOfArray0 != end) {
                 if (array[start0] < array[halfOfArray0]) {
                     mergedArray[i] = array[start0];
@@ -56,16 +44,12 @@ public class SimpleSorting {
                 start0++;
             }
         }
-        swapArray(mergedArray, array);
+        swapArray(mergedArray, array, 1, array.length);
     }
 
-    private void swapArray(int[] fromArray, int[] toArray) {
-        if (fromArray.length == toArray.length) {
-            for (int i = 0; i < fromArray.length; i++) {
-                toArray[i] = fromArray[i];
-            }
-        } else {
-            System.err.println("Some part of array is not sorted!");
+    private void swapArray(int[] fromArray, int[] toArray, int start, int end) {
+        for (int i = start - 1; i < end; i++) {
+            toArray[i] = fromArray[i];
         }
     }
 }

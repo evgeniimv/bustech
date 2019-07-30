@@ -49,43 +49,22 @@ public class SimpleSortingTest {
         assertArrayEquals(sortedArray, simpleSorting.sortArray(array, 1, array.length));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void sortArray6() {
-        int[] array = {};
-        int[] sortedArray = {};
-        assertArrayEquals(sortedArray, simpleSorting.sortArray(array, 1, array.length));
-    }
-
     @Test
-    public void sortArray7() {
+    public void sortArray6() {
         int[] array = {1};
         int[] sortedArray = {1};
         assertArrayEquals(sortedArray, simpleSorting.sortArray(array, 1, array.length));
     }
 
     @Test
-    public void sortArray8() {
-        int[] array = {1, 5, 6, 7, 4, 2, 5, 8, 9, 3, 4, 7, 5};
-        int[] sortedArray = {1, 5, 6, 4, 7, 2, 5, 8, 9, 3, 4, 7, 5};
-        assertArrayEquals(sortedArray, simpleSorting.sortArray(array, 1, 5));
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void sortArray9() {
-        int[] array = {4, 5, 8, 9, 7, 6, 5, 3, 2, 4, 5};
-        int[] sortedArray = {2, 3, 4, 4, 5, 5, 5, 6, 7, 8, 9};
-        assertArrayEquals(sortedArray, simpleSorting.sortArray(array, 6, 3));
-    }
-
-    @Test
-    public void sortArray10() {
+    public void sortArray7() {
         int[] array = {7, 8, 9, 36, 4, 5, 5000001, 5000000, 0, 5, 6};
         int[] sortedArray = {7, 8, 9, 4, 5, 36, 5000000, 5000001, 0, 5, 6};
         assertArrayEquals(sortedArray, simpleSorting.sortArray(array, 4, 8));
     }
 
     @Test
-    public void sortArray11() {
+    public void sortArray8() {
         int[] array = {4, 4, 4, 8, 7, 9, 6, 5, 48, 2};
         int[] sortedArray = {4, 4, 4, 8, 7, 9, 6, 5, 48, 2};
         assertArrayEquals(sortedArray, simpleSorting.sortArray(array, 5, 5));
